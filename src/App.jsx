@@ -7,10 +7,11 @@ import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import './App.css'
 
 function App() {
   return (
-    <div>
+  <div className='App'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

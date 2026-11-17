@@ -1,184 +1,645 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* =========================
+   TOP BAR
+   ========================= */
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+.top-bar {
+  background-color: #021827;
+  color: white;
+  font-size: 13px;
+  padding: 7px 0;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+.top-bar .container-fluid {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+.new-badge {
+  background-color: #0ab3a6;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 7px;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
+/* =========================
+   NAVBAR
+   ========================= */
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
+.navbar {
+  min-height: 50px;
+  background-color: white;
+  border-bottom: 1px solid #eeeeee;
   padding: 0;
+}
+
+.navbar .container-fluid {
+  padding-left: 32px;
+  padding-right: 32px;
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  align-items: center;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+/* =========================
+   LOGO
+   ========================= */
+
+.shopkart-logo {
+  width: 200px;
+  height: auto;
+  display: block;
 }
 
-.ticks {
+/* =========================
+   ALL CATEGORIES
+   ========================= */
+
+.category-dropdown {
+  margin-left: 18px;
+}
+
+.category-btn {
+  height: 40px;
+  padding: 0 16px;
+  background-color: #f5f6f7;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172033;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-btn:hover {
+  background-color: #eeeeef;
+  border-color: #d5d9dd;
+}
+
+/* =========================
+   NAVIGATION LINKS
+   ========================= */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navbar .nav-link {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 5px !important;
+  white-space: nowrap;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #0aa89e;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-box {
+  width: 300px;
+  height: 42px;
+  border: 1px solid #e1e5e9;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.search-btn {
+  width: 48px;
+  height: 42px;
+  border: none;
+  background-color: #0ab3a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* =========================
+   NAV ACTIONS
+   ========================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: 18px;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* =========================
+   CART COUNT
+   ========================= */
+
+.cart-wrapper {
   position: relative;
-  width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #0aa89e;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   DROPDOWN
+   ========================= */
+
+.category-dropdown .dropdown-menu {
+  min-width: 210px;
+  margin-top: 8px;
+  padding: 8px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-dropdown .dropdown-item {
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #172033;
+}
+
+.category-dropdown .dropdown-item:hover {
+  background-color: #e8f8f6;
+  color: #0aa89e;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1200px) {
+  .shopkart-logo {
+    width: 140px;
+  }
+
+  .main-nav {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .navbar .nav-link {
+    font-size: 14px;
+  }
+
+  .search-box {
+    width: 240px;
+  }
+
+  .nav-actions {
+    gap: 15px;
+    /* margin-left: 12px; */
+  }
+}
+
+@media (max-width: 991px) {
+  .category-dropdown {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .main-nav {
+    flex: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    gap: 5px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-bar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .shopkart-logo {
+    width: 125px;
+  }
+
+  .category-btn {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
+
+.navbar .cart-wrapper img,
+.navbar .cart-wrapper span {
+  margin-right: 30px;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero-section {
+  margin: 20px;
+  min-height: 420px;
+  border-radius: 18px;
+  background-image: url("./assets/images/home-hero.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.hero-content {
+  max-width: 500px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: #0ab3a6;
+}
+
+.hero-content p {
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.shop-btn {
+  background-color: #0ab3a6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shop-btn:hover {
+  background-color: #078f86;
+}
+
+.deal-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #0ab3a6;
+  padding: 12px 24px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deal-btn:hover {
+  background-color: #0ab3a6;
+}
+
+/* =========================
+   HERO BENEFITS
+   ========================= */
+
+.hero-benefits {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 35px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefit-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.benefit-item p {
+  margin: 0;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+   ========================= */
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 420px;
+    margin: 15px;
+    padding: 40px 35px;
+
+    background-position: 65% center;
+    background-size: cover;
+  }
+
+  .hero-content {
+    max-width: 440px;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  .hero-content p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .shop-btn,
+  .deal-btn {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  /* Benefits stay in one row on tablet */
+
+  .hero-benefits {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .benefit-item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefit-item p {
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   PHONE RESPONSIVE
+   ========================= */
+
+/* =========================
+   PHONE RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+  .hero-section {
+    position: relative;
+
+    min-height: 420px;
+
+    margin: 10px;
+
+    padding: 35px 20px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    /* Keep the background image */
+    background-image: url("./assets/images/home-hero.jpg");
+
+    /* Make the whole product composition visible */
+    background-size: cover;
+
+    background-position: 65% center;
+  }
+
+  /* =========================
+     BLUR THE BACKGROUND
+     ========================= */
+
+  .hero-section::before {
+    content: "";
+
     position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+
+    background-image: url("/images/hero-banner.png");
+
+    background-size: cover;
+
+    /*
+       Keep headphones,
+       watch and sneakers visible
+    */
+    background-position: 65% center;
+
+    background-repeat: no-repeat;
+
+    filter: blur(5px);
+
+    transform: scale(1.03);
+
+    z-index: 0;
   }
 
-  &::before {
+  /* =========================
+     DARK TRANSPARENT OVERLAY
+     ========================= */
+
+  .hero-section::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
     left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
     right: 0;
-    border-right-color: var(--border);
+    bottom: 0;
+
+    /*
+       Transparent enough
+       to keep products visible
+    */
+    background: rgba(2, 24, 39, 0.42);
+
+    z-index: 1;
+  }
+
+  /* =========================
+     HERO CONTENT
+     ========================= */
+
+  .hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+  }
+
+  /* =========================
+     BUTTONS
+     ========================= */
+
+  .hero-buttons {
+    display: flex;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  .shop-btn,
+  .deal-btn {
+    padding: 10px 17px;
+
+    font-size: 13px;
+  }
+
+  /* =========================
+     BENEFITS
+     ========================= */
+
+  .hero-benefits {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-top: 28px;
+  }
+
+  .benefit-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+  }
+
+  .benefit-item img {
+    width: 21px;
+    height: 21px;
+  }
+
+  .benefit-item p {
+    font-size: 12px;
+
+    margin: 0;
   }
 }
